@@ -1,5 +1,5 @@
 ## 应用名称
-	Checkupdate（网站视频节目更新提醒）
+Checkupdate（网站视频节目更新提醒）
 
 ## 技术栈	
 	JDk8
