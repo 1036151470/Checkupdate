@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--接口方法IUserOperation userOperation=session.getMapper(IUserOperation.class);-->
+<!--<mapper namespace="com.levent.IUserOperation">-->
+<!--</mapper>-->
+
+<!--非接口方法 System.out.println(session.selectList("users.getUserArticles",1));-->
+<mapper namespace="spacename">
+
+    <select id="getname" parameterType="int" resultType="User">
+        SELECT *FROM checkupdate WHERE id=#{id}
+    </select>
+
+    <update id="intoname" parameterType="User">
+        update checkupdate set name=#{name},url=#{url} WHERE id=#{id}
+    </update>
+
+    <insert id="realinto" parameterType="User">
+        INSERT INTO checkupdate(name,url) VALUES(#{name},#{url})
+    </insert>
+
+    <insert id="getall" parameterType="User">
+        SELECT *FROM checkupdate
+    </insert>
+</mapper>

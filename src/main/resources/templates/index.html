@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/jsandcss/bootstrap.css"/>
+    <link rel="stylesheet" href="/jsandcss/bootstrap-theme.css"/>
+    <script src="/jsandcss/bootstrap.js"></script>
+    <script src="/jsandcss/jquery.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+
+            <#if checkupdate??>
+                <#list checkupdate as o>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3>节目更新提示：</h3>
+                        </div>
+                        <div class="panel-body">
+                            ${o.name}</br>
+                            <a href="${o.url}"> 点击进入>></a>
+                        </div>
+                    </div>
+                    <span class="label label-default">Cron表达式为0 0 0-12 * * ?。 既从0小时开始,每12小时执行一次</span>
+                    <a href="/gorun">
+                        <button type="button" class="btn btn-default btn-primary">点击开启任务调度</button>
+                    </a>
+                    <a href="/stoprun">
+                        <button type="button" class="btn btn-default btn-primary">点击关闭任务调度</button>
+                    </a>
+                </#list>
+
+            </#if>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
